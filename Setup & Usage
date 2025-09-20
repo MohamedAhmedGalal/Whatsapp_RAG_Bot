@@ -1,0 +1,45 @@
+## Setup & Usage
+
+### 1. Prerequisites
+- Python 3.9 or higher
+- Google Colab (or a local Python environment with GPU support)
+- A WhatsApp chat exported as a .txt file (Settings → Chats → Export Chat → Without Media)
+
+### 2. Installation
+Clone this repository and install the required libraries:
+    git clone https://github.com/<your-repo-name>.git
+    cd <your-repo-name>
+    pip install -r requirements.txt
+
+Or, if running on Google Colab, simply run the first cell to install:
+    !pip install sentence-transformers faiss-cpu openai transformers accelerate bitsandbytes
+
+### 3. Prepare Your Data
+1. Export a WhatsApp chat between you and a friend as a .txt file.
+2. Upload the exported file to the notebook using the provided upload cell.
+
+### 4. Run the Notebook
+- Cell 1: Install dependencies
+- Cell 2: Upload your WhatsApp chat file
+- Cell 3: Parse the chat into conversation blocks
+- Cell 4: Generate embeddings and build the FAISS vector database
+- Cell 5: Start chatting with the AI-powered WhatsApp twin!
+
+### 5. Optional (Advanced)
+- Replace the WhatsApp chat with other personal or company documents to create a private knowledge assistant.
+- Run locally with Ollama for completely offline usage.
+
+## Workflow Diagram
+Exported WhatsApp Chat (.txt)
+        ↓
+Parsing & Chunking
+        ↓
+SentenceTransformer Embeddings
+        ↓
+FAISS Vector Database
+        ↓
+Query + Context Retrieval
+        ↓
+Ollama / Hugging Face LLM
+        ↓
+Personalized WhatsApp-style Response
